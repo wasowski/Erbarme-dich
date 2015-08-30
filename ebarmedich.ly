@@ -2,7 +2,7 @@
 \header {
 title = "Erbarme dich, from St. Matthew's Passion"
 composer = "Johann Sebastian Bach"
-arranger = "Arranged for classical guitar by Joseph R. Lewis"
+arranger = "arr. by Joseph R. Lewis, changes by Andrzej Wąsowski"
 copyright = "License: http://creativecommons.org/licenses/by-sa/3.0/"
 } %end header
 
@@ -14,7 +14,7 @@ guitarUpperVoice = \relative c {
 	\key b \minor
 	\time 12/8
 	
-	\partial 8 fis8-3
+	\partial 8 fis8
 	\acciaccatura { b16-0[ cis-1] } d8.-2 \stemUp cis16 b8-0 \appoggiatura cis-2 b8.-0 ais16-2 b8-0 b4.-0 ~ b4 b8
 	\slurUp g'8.[( fis32 g a8] ~ a8.) g16 fis8 \appoggiatura fis-1 e4.-0 ~ e8. g16 e8-0
 	\appoggiatura d-3 c!8.-1 g'16-4 e8-1 \appoggiatura c!-3 b8.-2 g'16-1 e8-0 \appoggiatura b-3 ais8.[-2 \slurUp e'32(-0 fis-2 g8]-3 ~ g8.) fis16 e8
@@ -31,8 +31,15 @@ guitarLowerVoice = \relative c {
 	\voiceTwo 
 	
 	\partial 8 r8
-	b'-4 b-4 b-4 a-1 a a-1 g-4 g g fis fis fis | e e e fis fis fis g-0 e g b g b-0
-	e-0 e-0 e-0 d-1 d-1 d-1 cis-1 cis-1 cis-1 ais-2 ais ais | b-3 b b g-0 g g fis-3 cis-3 e-1 e ais,-1 cis-3 
+	b b b a a a g g g fis fis fis | 
+	  << \new VoiceA {
+	     e
+	     }
+	     \new VoiceB {
+	     e'
+	     }
+	  >>  e, e fis fis fis g e g b g b-0
+	e e e d d d cis cis cis ais ais ais | b b b g g g fis cis' e e ais,-1 cis-3 
 	fis,4 r8 r4 r8 fis fis fis fis fis fis
 	b4 r8 r4 r8 b b b b b b
 	e, e e e e e e e e e e e'-2
@@ -57,5 +64,5 @@ guitar = \simultaneous {
 \layout {
 	
 	}
-}
 
+}
