@@ -18,6 +18,14 @@
   tagline = "" %remove
 } %end header
 
+%guide = #(define-music-function (parser location shift pad) (pair? number?) #{
+% 	\once \override TextSpanner.dash-period = #1.5
+%    \once \override TextSpanner.bound-details.left.padding = #'1
+%    \once \override TextSpanner.bound-details.right.padding = #1
+%    \once \override TextSpanner.extra-offset = #shift 
+%    \override TextSpanner.bound-details.right.Y = #pad
+%    \once \override TextSpanner.bound-details.right.text = #'()
+%#})
 
 guitarUpperVoice = \relative c {
 	\set Staff.instrumentName = "Guitar"
@@ -37,13 +45,13 @@ guitarUpperVoice = \relative c {
 	g32[( a b8) a32( g a g fis16)] e32[( fis g8) fis32( e fis e d16)] c32[( d e8) d32( c d c b16)] ais32[( b cis8) b32(ais? b-0\rightHandFinger #4 ais-3\rightHandFinger #3 gis16\rightHandFinger #2)]-1 \break
 	fis8.-3 gis32(-1 ais-3 b-0 cis-2 d-3 cis) e8-.-0 d-.-3 cis \trill b4. ~ b4 fis'8  \break
 	% bar 9
-	d'8.-4 cis16 b8 b8. ais16-1 [(b8)] b4.-4 ~ b4. \break
+	d'8.-4 cis16 b8 b8. ais16-1 [(b8)] b4.-4 ~ b4. 
 	% bar 10
-	r4 e,8-4 e8 dis8 a'8 g4 e8 g4 b8 \break
+	r4 e,8-4 e8 dis8 a'8 g4 e8 g4 b8 
 	% bar 11
-	c4 (b8) b4 (ais8) ais4 b8 cis4. ~ \break
+	c4 (b8) b4 (ais8-3) \glissando ais4 b8 \glissando cis4.~ |
 	% bar 12
-	cis8.  ais16 b8 cis16 d16 e8 cis8 ais4 (gis8) fis4 e8  \break
+	cis8.  ais16 b8 cis16 (d16) e8 cis8 ais4 gis8 fis4 \breathe e8
 	% bar 13
         dis8 fis16 a16 c8 (c8.) b16 (a8 ) \appoggiatura a8 g4. (g4) fis8 
         % bar 14
@@ -87,15 +95,15 @@ guitarLowerVoice = \relative c {
 	e, e e e e e e e e e e e'-2
         d-4 cis-4 b-1 fis'-4 fis, fis b4. ~ b4 b'8-2 
         % bar 9
-        << { \voiceTwo s4. s4. b4. dis4. } \\ { b8-2 b8 b8 \glissando a8 a8 a8 g8 g8 g8 \bbarre #"IV" { fis8 fis8 fis8 } } >> |
+        << { \voiceTwo s4. s4. b4. dis4. } \\ { b8-2 b8 b8 \glissando a a a g g g \bbarre #"IV" { fis fis fis } } >> |
         % bar 10
-        << { \voiceTwo b4. a4. b4. b4. } \\ { e,8 e8  \bbarre #"II" { e8  e8 e8 e8 e8 e8 e8 e8 e8 } e8 }  >> |
+        << { \voiceTwo b4. a4. b4. b4. } \\ { e,8 e  \bbarre #"II" { e e e e e e e e e } \set stringNumberOrientations = #'(right) e\5 }  >> |
         % bar 11
-        e8 e8 e8 d8 d8 d8 cis8 cis8 cis8 ais8 ais8 ais8
+        e e e d-0 d d \bbarre #"IV" { cis8 cis8 cis8 } \bbarre #"VI" { \set stringNumberOrientations = #'(right) ais\6 ais ais } |
         % bar 12
-        b8 b8 b8  g'8 g8 g8 fis8 fis8 fis8 fis,4 r8
+        b8 b8 b8  g'8 g8 g8 \bbarre #"IV" { fis8 fis8 fis8 } \bbarre #"II" { fis,4 ais'8 }
         % bar 13
-        b4 r8 r4 r8 e4 r8 r4 r8 
+        b,4 r8 r4 r8 e4 r8 r4 r8 
         % bar 14
         cis4 r8 r4. fis4-1 r8 r4. 
         % bar 15
