@@ -53,21 +53,25 @@ guitarUpperVoice = \relative c {
 	% bar 12
 	cis8.  ais16 b8 cis16 (d16) e8 cis8 ais4 gis8 fis4 \breathe e8
 	% bar 13
-        dis8 fis16 a16 c8 (c8.) b16 (a8 ) \appoggiatura a8 g4. (g4) \breathe fis8 
+        \bbarre #"II" {dis8 fis16 a16 } c8 (c8.) b16 (a8 ) \appoggiatura a8 g4. (g4) \breathe fis8 
         % bar 14
         \bbarre #"IV" { eis8 gis16 b16 } d8 (d8.)cis16 (b8) a4-4 gis8 [a8.] \breathe cis16 (b8)
         % bar 15
         cis4. (cis 4. cis8.) b16 \slurDown ais8 ais8. [b16] cis8 \slurUp
         % bar 16
-        d8. cis32 d32 e8 (e8.) d16 [(cis8)] \appoggiatura cis8 b4. (b4) \breathe a8
+        d8. cis32 d32 e8 (e8.) d16 [(cis8)] \appoggiatura cis8 b4. (b4) \breathe a8 % \bbarre #"IV" { a8 } 
         % bar 17
         \autoBeamOff g4 (fis8) fis4 (eis8)  eis8. [b'32 cis32 d8] (d8.) cis16 b8 
         a8. gis16 b8 (b8.) a16 [(gis8)] eis4 (dis8 cis4) r8
-        r4 r8  r8 r16 cis16 [eis16 gis16] b8. [cis16 d8] (d8.) cis16 [(b8)] 
-         ais4 cis8 \appoggiatura {cis16 [d16]}  e8. cis16 [(ais16 b16)]  e,8. [fis16 g8]  (g8.) fis16 [e8]
+        % bar 19
+        b32 [ a32 gis16 fis8 eis16. fis32] gis32 [fis32 eis16 d8 cis16. d32] 
+        b''8. [cis16 d8] (d8.) cis16 [(b8)]
+        % bar 20
+        ais4 cis8 \appoggiatura {cis16 [d16]}  e8. cis16 [(ais16 b16)]  e,8. [fis16 g8]  g8. fis16 [e8]
+        % bar 21
          d8 [e8 fis8] (fis8) [gis8 ais8] b8 [cis8 d8] (d8) cis16 [b16] a16 [gis16] 
-         cis8  [b8] a8 \appoggiatura cis8 b8 [a8]  gis8 fis4. fis4 r8
-\bar "|."
+        % bar 22
+        cis8  [b8] a8 \appoggiatura cis8 b8 [a8]  gis8 fis4. fis4 r8 \bar "|."
 
 }
 
@@ -103,28 +107,30 @@ guitarLowerVoice = \relative c {
         % bar 12
         b8 b8 b8  g'8 g8 g8 \bbarre #"IV" { fis8 fis8 fis8 } \bbarre #"II" { fis,4 ais'8 }
         % bar 13
-        << { \voiceTwo b4 b8 ( b4. )  b4 a8 [b8 cis8] e8 } \\ { \bbarre #"II" { b,4 } r8 r4 r8 e4 r8 r4 b8 \glissando } >> |
+        << { \voiceTwo b4 b8 ( b4. )  b4 a8 [b8 cis8] e8 } \\ { b,4 r8  r4 r8 e4 r8 r4 b8 \glissando } >> |
         % bar 14
-        << { \voiceTwo cis'4 } \\ { cis,4 r8 r4. fis8-1 fis8 fis8 fis8 s4 } >>
+        <cis cis'>4 r8 r4. fis8-1 fis8 fis8 fis8 s4
         % bar 15
         fis8 fis8 fis8 e8 e8 e8 d8 d8 d8 cis8-3\6 cis8 cis8
         % bar 16
-        \bbarre #"VII" { b8 b8 b8 } \bbarre #"IX" { cis8 cis8 cis8 } d8 b8\6 d8 fis8 d8 fis8
+        \bbarre #"VII" { b8 b8 b8 } \bbarre #"IX" { cis8 cis8 cis8 } d8 b8\6 d8 fis8\5 d8 fis8\4
         % bar 17
-        b8 b8 b8a8 a8 a8 gis8 gis8 gis8 eis8 eis8 eis8 
+        b8 b8 b8a8 a8 a8 \bbarre #"VI" { gis8 gis8 gis8 eis8-3 eis8 } eis8 
         % bar 18
-        fis8 fis8 fis8 d8 d8 d8 cis8 gis8 b8 b8 eis,8 gis8
+        \bbarre #"IV" { fis8 fis8 fis8 } d8 d8 d8 \bbarre #"IV" { cis8 gis8 b8 b8 } eis,8-1 gis8-3
         % bar 19
-        cis4 r8 r4 r8  cis8 (cis8 cis8 ) cis8 (cis8 cis8 )
+        % cis4 r8 r4 r8  cis8 (cis8 cis8 ) cis8 (cis8 cis8 )
+        cis4-4 r8 r4 r8  \bbarre #"VII" { cis8-2 cis8 cis8  cis8 cis8 cis8 }
         % bar 20
-        fis,4 r8 r4. fis8 fis8 fis8 fis8 fis8 fis8
+        fis4 r8  r4. \bbarre #"II" { fis,8 fis8 fis8 fis8 fis8 fis8 }
         % bar 21
-        b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 
+        b8-1 b8 b8 b8 b8 b8 \bbarre #"VII" { b8 b8 b8 b8 b8 b8 }
         % bar 22
-        a8 gis8 fis8 cis'8 cis8 cis8 fis8 fis,8  a8 cis8 a8 cis8 
+        a8-0 \bbarre #"IV" gis8 \bbarre #"II" fis8 
+        \bbarre #"IV" { cis'8 cis8 cis8 } \bbarre #"II" { fis8 fis,8  a8 cis8 a8 cis8 } 
 }
 
-
+#(set-global-staff-size 19)
 
 guitar = \simultaneous {
         \accidentalStyle modern
